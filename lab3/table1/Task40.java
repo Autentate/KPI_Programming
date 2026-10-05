@@ -1,3 +1,5 @@
+// Знайти різницю максимального та другого елементів масиву
+
 public class Task40 {
     public static int getDiffMaxAndSecondElement(int[] array) {
         if (array == null) {

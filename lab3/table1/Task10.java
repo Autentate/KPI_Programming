@@ -1,3 +1,5 @@
+// Знайти середнє арифметичне елементів масиву
+
 public class Task10 {
     public static double calculateAverage(double[] array) {
         if (array == null) {

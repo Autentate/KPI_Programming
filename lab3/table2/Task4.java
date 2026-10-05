@@ -1,3 +1,5 @@
+// void transpose(int[][] matrix) {}. Транспонувати квадратну матрицю.
+
 import java.util.Arrays;
 
 public class Task4 {
@@ -29,9 +31,9 @@ public class Task4 {
 
         // Дозволена комбінація
         int[][] matrix = {
-            {1, 2, 3},
-            {4, 5, 6},
-            {7, 8, 9}
+                { 1, 2, 3 },
+                { 4, 5, 6 },
+                { 7, 8, 9 }
         };
         System.out.println("Початкова матриця: " + Arrays.deepToString(matrix));
         transpose(matrix);
@@ -40,8 +42,8 @@ public class Task4 {
         // Заборонена комбінація (неквадратна матриця)
         try {
             int[][] invalidMatrix = {
-                {1, 2, 3},
-                {4, 5, 6}
+                    { 1, 2, 3 },
+                    { 4, 5, 6 }
             };
             transpose(invalidMatrix);
         } catch (IllegalArgumentException e) {
