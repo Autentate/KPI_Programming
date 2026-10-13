@@ -1,5 +1,7 @@
-// Реалізація двох алгоритмів сортування для масиву дійсних чисел у порядку 
-// спадання з використанням патерна «Стратегія». 
+import java.util.Arrays;
+
+// Реалізація двох алгоритмів сортування (BubbleSort та SelectionSort) для масиву дійсних чисел
+// у порядку спадання з використанням патерна «Стратегія».
 
 interface SortingStrategy {
     void sort(double[] array);
@@ -59,26 +61,28 @@ public class task {
     }
 
     public static void main(String[] args) {
-        double[] array1 = { 3.5, 1.2, 5.8, 2.1, 4.4 };
-        double[] array2 = { 3.5, 1.2, 5.8, 2.1, 4.4 };
+        double[] input = { 3.5, 1.2, 5.8, 2.1, 4.4 };
+        double[] bubbleResult = input.clone();
+        double[] selectionResult = input.clone();
 
         task sorter = new task();
 
+        System.out.print("Початковий масив: ");
+        printArray(input);
+
         sorter.setStrategy(new BubbleSort());
         System.out.println("=== Тестування Bubble sort (по спаданню) ===");
-        System.out.print("Початковий масив: ");
-        printArray(array1);
-        sorter.executeSort(array1);
-        System.out.print("Відсортований масив: ");
-        printArray(array1);
+        sorter.executeSort(bubbleResult);
+        System.out.print("Результат: ");
+        printArray(bubbleResult);
 
         sorter.setStrategy(new SelectionSort());
         System.out.println("\n=== Тестування Selection sort (по спаданню) ===");
-        System.out.print("Початковий масив: ");
-        printArray(array2);
-        sorter.executeSort(array2);
-        System.out.print("Відсортований масив: ");
-        printArray(array2);
+        sorter.executeSort(selectionResult);
+        System.out.print("Результат: ");
+        printArray(selectionResult);
+        System.out.println("Результати алгоритмів однакові: "
+                + Arrays.equals(bubbleResult, selectionResult));
     }
 
     public static void printArray(double[] array) {
